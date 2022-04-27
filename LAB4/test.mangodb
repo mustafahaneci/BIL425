@@ -1,0 +1,28 @@
+db.test.find({age: {$lt:20}})  // $lt 20'den küçük
+db.test.find({age: {$lte:20}})  // $lte 20 ve 20'den küçük
+db.test.find({$or:[{name:"Ali"}]})  // $or
+db.test.find(age: {$gt:15})    // $gt 15'den büyük
+db.test.find(age: {$gte:15})    // $gte 15 ve 15'den büyük
+db.test.find({age: {$ne:15}})   // $ne 15 eşit değil
+db.test.find().sort({age: 1})   // küçükten büyüğe
+db.test.find().sort({age: -1})  // büyükten küçüğe
+db.test.find().limit(1)     // top değeri 1 tane değer
+db.test.findOne({age:15})   // 15 yaşındaki bir değeri getir
+db.test.updateOne(
+    {name: "Ali"},
+    {
+        $set{
+            name: "Enes",
+            age: 23
+        }
+    }
+)                           // Ali verisini güncelleme
+db.test.updateMany(
+    {},
+    {
+        $set{
+            name: "fullname"
+            
+        }
+    }
+)                          // tüm veriye güncelleme

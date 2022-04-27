@@ -1,0 +1,18 @@
+
+{{#if todos.lenght}}
+<ul>
+    {{#each todos}}
+    <li>
+        {{#if completed}}
+        <input type="checkbox" name="completed">
+        <span class="completed">{{title}}</span>
+        {{else}}
+        <input type="checkbox" name="completed">
+        <span {{title}}</span>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<p>No todos!</p>
+{{/if}}
